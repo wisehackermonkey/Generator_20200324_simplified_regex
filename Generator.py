@@ -234,19 +234,19 @@ if __name__ == "__main__":
     # formater(parse_multiple,  test_string_multiple_list_shorthand_true_v1)
     # formater(remove_non_controll_characters, "[A-C](command)[A-C]")
     # formater(parse_multiple, test_string_multiple_list_shorthand_true_v2)
-
+    
     if len(sys.argv) >=2:
         command  = sys.argv[1]
 
 
-        #TODO fix phone number & imbeding
+        # TODO fix phone number & imbeding
         # command = "([1-9][A-Z][1-9])-([1-9][A-Z][1-9])"
         result = parse_multiple(command)
         print(sys.argv[-1])
         print(f"Result: {command} => {result}")
     else:
         print("no Args")
-        print('please run something like > python Generator.py "_[1-9][A-Z][1-9]_" ')
+        print('please run something like > python Generator.py "\([1-9][A-Z][1-9]\)" ')
     
     
 
