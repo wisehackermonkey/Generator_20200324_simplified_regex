@@ -18,7 +18,7 @@ if __name__ == "__main__":
         gen = generator(command)
 
         result = gen.get()
-        print(sys.argv[-1])
+        # print(sys.argv[-1])
         print(f"Result: {command} => {result}")
     else:
         print("no Args")
