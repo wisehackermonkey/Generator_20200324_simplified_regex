@@ -4,6 +4,8 @@ import string
 import sys
 import re  # for regex
 
+# TODO fix phone number & imbeding
+# command = "([1-9][A-Z][1-9])-([1-9][A-Z][1-9])"
 
 class generator():
     string = ""
@@ -97,6 +99,18 @@ class generator():
         return bool(re.search('[a-zA-Z]', _string))
 
     def contains_escaped_controll_chars(self, _string):
+        #"\( \) \[ \] \, \\ \\\ " ( includes "\(" or includes "\]" or... ) or True &  does not include \\\\\ x5
+
+        # [\(  \) \[ \]  \,] not include unescaped controll characters (){},\
+
+        # examples
+        # [abbc\[cc]  true
+        # [\(\)\[\]\,]  true
+
+        # [abb,ccc]  false
+        # [abbccc]  false
+
+        # [abb,cc\(c] true
         return any(item in _string for item in (r"\(", r"\)", r"\[", r"\]", r"\,", r"\\"))
 
     def is_short_hand(self, _string):
@@ -106,6 +120,10 @@ class generator():
         return contains_list_short_hand
 
     def remove_letters(self, _string):
+        # [abb,cc\(c] contains escaped controll chars == true, and contains 1 []()\ and contains 0 or more 
+
+        # [abb,cc\(c] remove controll characters, contains 1 or more "," characters , contains 1 of contains 1 []()\
+        # [abb,ccc]  
         import string
 
         if self.string_contains_letters(_string):
