@@ -5,6 +5,12 @@ by oran collins
 20200324
 ```
 ----------
+# UPDATE 2021
+# This repo is is  archived
+# Found a javascript version of this library that is complete, and theres a ruby version too!
+
+### Javascript [fent/randexp.js: Create random strings that match a given regular expression.](https://github.com/fent/randexp.js)
+### Ruby [tom-lord/regexp-examples: Generate strings that match a given regular expression](https://github.com/tom-lord/regexp-examples)
 
 #### Example Generate random ip addresses
 > \>python .\generator_cli.py "[1-255].[1-255].[1-255].[1-255]" 
